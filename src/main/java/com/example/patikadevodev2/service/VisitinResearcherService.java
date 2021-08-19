@@ -1,4 +1,38 @@
 package com.example.patikadevodev2.service;
 
-public class VisitinResearcherService {
+import com.example.patikadevodev2.dao.VisitingResearcherDao;
+import com.example.patikadevodev2.model.VisitingResearcher;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class VisitinResearcherService implements BaseService<VisitingResearcher> {
+    VisitingResearcherDao visitingResearcherDao;
+
+    @Autowired
+    public VisitinResearcherService(VisitingResearcherDao visitingResearcherDao) {
+        this.visitingResearcherDao = visitingResearcherDao;
+    }
+
+    @Override
+    public List<VisitingResearcher> findAll() {
+        return null;
+    }
+
+    @Override
+    public VisitingResearcher findById(int id) {
+        return null;
+    }
+
+    @Override
+    public void save(VisitingResearcher object) {
+
+    }
+
+    @Override
+    public void deleteById(int id) {
+
+    }
 }
