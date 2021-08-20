@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class VisitinResearcherService implements BaseService<VisitingResearcher> {
+public class VisitingResearcherService implements BaseService<VisitingResearcher> {
     VisitingResearcherDao visitingResearcherDao;
 
     @Autowired
-    public VisitinResearcherService(VisitingResearcherDao visitingResearcherDao) {
+    public VisitingResearcherService(VisitingResearcherDao visitingResearcherDao) {
         this.visitingResearcherDao = visitingResearcherDao;
     }
 
@@ -33,6 +33,11 @@ public class VisitinResearcherService implements BaseService<VisitingResearcher>
 
     @Override
     public void deleteById(int id) {
+
+    }
+
+    @Override
+    public void update(VisitingResearcher id) {
 
     }
 }

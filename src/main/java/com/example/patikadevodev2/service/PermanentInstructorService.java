@@ -35,4 +35,9 @@ public class PermanentInstructorService implements BaseService<PermanentInstruct
     public void deleteById(int id) {
 
     }
+
+    @Override
+    public void update(PermanentInstructor id) {
+
+    }
 }

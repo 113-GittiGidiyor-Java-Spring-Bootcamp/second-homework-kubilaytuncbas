@@ -35,4 +35,9 @@ public class UserService implements BaseService<User> {
     public void deleteById(int id) {
 
     }
+
+    @Override
+    public void update(User id) {
+
+    }
 }

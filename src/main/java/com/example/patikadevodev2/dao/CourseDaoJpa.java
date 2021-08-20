@@ -1,24 +1,23 @@
-package com.example.patikadevodev2.service;
+package com.example.patikadevodev2.dao;
 
-import com.example.patikadevodev2.dao.CourseDao;
 import com.example.patikadevodev2.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
-@Service
-public class CourseService implements BaseService<Course>{
-    CourseDao courseDao;
+public class CourseDaoJpa implements CourseDao<Course>{
+
+    private EntityManager entityManager;
 
     @Autowired
-    public CourseService(CourseDao courseDao) {
-        this.courseDao = courseDao;
+    public CourseDaoJpa(EntityManager entityManager) {
+        this.entityManager = entityManager;
     }
 
     @Override
     public List<Course> findAll() {
-        return courseDao.findAll();
+        return entityManager.createQuery("from Course c",Course.class).getResultList();
     }
 
     @Override
@@ -37,7 +36,7 @@ public class CourseService implements BaseService<Course>{
     }
 
     @Override
-    public void update(Course id) {
+    public void update(int id) {
 
     }
 }

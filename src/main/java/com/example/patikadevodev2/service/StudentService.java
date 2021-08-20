@@ -35,4 +35,9 @@ public class StudentService implements BaseService<Student> {
     public void deleteById(int id) {
 
     }
+
+    @Override
+    public void update(Student id) {
+
+    }
 }

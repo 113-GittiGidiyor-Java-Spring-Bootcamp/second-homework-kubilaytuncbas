@@ -1,6 +1,6 @@
 package com.example.patikadevodev2.controller;
 
-import com.example.patikadevodev2.service.VisitinResearcherService;
+import com.example.patikadevodev2.service.VisitingResearcherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/visiting")
 public class VisitingResearchersController {
 
-    VisitinResearcherService visitinResearcherService;
+    VisitingResearcherService visitinResearcherService;
 
     @Autowired
-    public VisitingResearchersController(VisitinResearcherService visitinResearcherService) {
+    public VisitingResearchersController(VisitingResearcherService visitinResearcherService) {
         this.visitinResearcherService = visitinResearcherService;
     }
 }

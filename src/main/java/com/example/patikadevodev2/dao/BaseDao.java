@@ -8,4 +8,5 @@ public interface BaseDao<T> {
     T findById(int id);
     void save(T object);
     void deleteById(int id);
+    void update(int id);
 }
