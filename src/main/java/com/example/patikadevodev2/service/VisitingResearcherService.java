@@ -18,26 +18,26 @@ public class VisitingResearcherService implements BaseService<VisitingResearcher
 
     @Override
     public List<VisitingResearcher> findAll() {
-        return null;
+        return visitingResearcherDao.findAll();
     }
 
     @Override
     public VisitingResearcher findById(int id) {
-        return null;
+        return (VisitingResearcher) visitingResearcherDao.findById(id);
     }
 
     @Override
-    public void save(VisitingResearcher object) {
-
+    public VisitingResearcher save(VisitingResearcher visitingResearcher) {
+        return (VisitingResearcher) visitingResearcherDao.save(visitingResearcher);
     }
 
     @Override
     public void deleteById(int id) {
-
+        visitingResearcherDao.deleteById(id);
     }
 
     @Override
-    public void update(VisitingResearcher id) {
-
+    public void update(VisitingResearcher visitingResearcher) {
+        visitingResearcherDao.update(visitingResearcher);
     }
 }

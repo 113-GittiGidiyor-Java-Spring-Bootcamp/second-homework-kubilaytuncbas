@@ -23,21 +23,21 @@ public class CourseService implements BaseService<Course>{
 
     @Override
     public Course findById(int id) {
-        return null;
+        return (Course) courseDao.findById(id);
     }
 
     @Override
-    public void save(Course object) {
-
+    public Course save(Course course) {
+       return (Course) courseDao.save(course);
     }
 
     @Override
     public void deleteById(int id) {
-
+        courseDao.deleteById(id);
     }
 
     @Override
-    public void update(Course id) {
-
+    public void update(Course course) {
+        courseDao.update(course);
     }
 }

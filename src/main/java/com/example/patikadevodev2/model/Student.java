@@ -17,7 +17,7 @@ public class Student extends User {
     @Column(name="gender")
     private String Gender;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Course> studentCourses = new HashSet<>();
 
 

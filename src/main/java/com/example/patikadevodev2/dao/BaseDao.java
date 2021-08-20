@@ -6,7 +6,7 @@ public interface BaseDao<T> {
 
     List<T> findAll();
     T findById(int id);
-    void save(T object);
+    T save(T object);
     void deleteById(int id);
-    void update(int id);
+    void update(T object);
 }

@@ -18,26 +18,26 @@ public class UserService implements BaseService<User> {
 
     @Override
     public List<User> findAll() {
-        return null;
+        return userDao.findAll();
     }
 
     @Override
     public User findById(int id) {
-        return null;
+        return (User) userDao.findById(id);
     }
 
     @Override
-    public void save(User object) {
-
+    public User save(User user) {
+            return (User) userDao.save(user);
     }
 
     @Override
     public void deleteById(int id) {
-
+        userDao.deleteById(id);
     }
 
     @Override
-    public void update(User id) {
-
+    public void update(User user) {
+        userDao.update(user);
     }
 }

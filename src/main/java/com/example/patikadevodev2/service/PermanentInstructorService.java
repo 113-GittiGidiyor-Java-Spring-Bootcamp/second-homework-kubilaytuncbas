@@ -18,26 +18,26 @@ public class PermanentInstructorService implements BaseService<PermanentInstruct
 
     @Override
     public List<PermanentInstructor> findAll() {
-        return null;
+        return permanentInstructorDao.findAll();
     }
 
     @Override
     public PermanentInstructor findById(int id) {
-        return null;
+        return (PermanentInstructor) permanentInstructorDao.findById(id);
     }
 
     @Override
-    public void save(PermanentInstructor object) {
-
+    public PermanentInstructor save(PermanentInstructor permanentInstructor) {
+        return (PermanentInstructor) permanentInstructorDao.save(permanentInstructor);
     }
 
     @Override
     public void deleteById(int id) {
-
+        permanentInstructorDao.deleteById(id);
     }
 
     @Override
-    public void update(PermanentInstructor id) {
-
+    public void update(PermanentInstructor permanentInstructor) {
+        permanentInstructorDao.update(permanentInstructor);
     }
 }

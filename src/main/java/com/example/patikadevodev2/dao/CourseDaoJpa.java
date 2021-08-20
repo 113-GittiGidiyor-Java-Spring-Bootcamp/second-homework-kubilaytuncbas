@@ -2,10 +2,13 @@ package com.example.patikadevodev2.dao;
 
 import com.example.patikadevodev2.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Repository
 public class CourseDaoJpa implements CourseDao<Course>{
 
     private EntityManager entityManager;
@@ -22,21 +25,24 @@ public class CourseDaoJpa implements CourseDao<Course>{
 
     @Override
     public Course findById(int id) {
-        return null;
+        return entityManager.find(Course.class,id);
     }
 
     @Override
-    public void save(Course object) {
-
+    @Transactional
+    public Course save(Course object) {
+        return entityManager.merge(object);
     }
 
     @Override
+    @Transactional
     public void deleteById(int id) {
-
+        entityManager.remove(id);
     }
 
+    @Transactional
     @Override
-    public void update(int id) {
-
+    public void update(Course course) {
+        entityManager.merge(course);
     }
 }

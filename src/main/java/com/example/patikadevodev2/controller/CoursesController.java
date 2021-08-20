@@ -5,9 +5,7 @@ import com.example.patikadevodev2.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,9 +20,25 @@ public class CoursesController {
         this.courseService = courseService;
     }
 
-    @GetMapping("/courses")
+    @GetMapping("/findcourses")
     public ResponseEntity<List<Course>> findAll(){
         return new ResponseEntity<>(courseService.findAll(),HttpStatus.OK);
+    }
+    @PostMapping("/saveCourse")
+    public Course saveCourse(@RequestBody Course course){
+        return courseService.save(course);
+    }
+    @PutMapping("/updateCourse")
+    public void updateCourse(@RequestBody Course course){
+        courseService.update(course);
+    }
+    @PostMapping("/delete")
+    public void deleteCourse(@RequestBody int id){
+        courseService.deleteById(id);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Course> findCourseById(@PathVariable int id ){
+        return new ResponseEntity<>(courseService.findById(id),HttpStatus.OK);
     }
 
 }
